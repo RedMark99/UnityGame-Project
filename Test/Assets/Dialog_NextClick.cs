@@ -21,24 +21,29 @@ public class Dialog_NextClick : MonoBehaviour {
 			if (isText1 == true) {
 				isText1 = false;
 			}
-			else{
-			if(fin_Dialog == false)
-			{
-				isText1 = true;
-				npc_taskScript.EndDialog = true;
-				QbjectQuest.SetActive(true);
-			}
 			else
 			{
-				isText1 = true;
-				npc_taskScript.fin_Dialog = true;
-			}
+				if(fin_Dialog == false)
+				{
+					isText1 = true;
+					npc_taskScript.EndDialog = true;
+					QbjectQuest.SetActive(true);
+					
+				}
+				else
+				{
+					isText1 = true;
+					npc_taskScript.fin_Dialog = true;
+				}
 			}
 		}
-		if (isText1 == true) {
+		if (isText1 == true) 
+		{
 			Text1.SetActive (true);
 			Text2.SetActive (false);
-		} else {
+		} 
+		else 
+		{
 			Text1.SetActive (false);
 			Text2.SetActive (true);
 		}

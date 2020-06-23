@@ -16,20 +16,24 @@ public class NPC_Task : MonoBehaviour {
 	}
 	
 	// Update is called once per frame
-	void Update () {
+	void Update () 
+	{
 
 		
 		if (EndDialog == true) {
 			Time.timeScale = 1;
 			QE.Quest1 = true;
 			Dialog1.SetActive (false);
+			Debug.Log("EndDialog");
 		}
+
 		if(fin_Dialog == true)
 		{
 			Time.timeScale = 1;
 			QE.Quest1 = false;
 			check = true;
 			Dialog2.SetActive(false);
+			Debug.Log("fin_dialog");
 		}
 	}
 	void OnTriggerEnter(Collider col)
@@ -39,10 +43,12 @@ public class NPC_Task : MonoBehaviour {
 			if(QE.end_Quest1 == false)
 			{
 				Dialog1.SetActive (true);
+				Debug.Log("Trigger EndDialog");
 			}
-			else if (QE.end_Quest1 == true && check == false)
+			else if (QE.end_Quest1 == true)
 			{
 				Dialog2.SetActive (true);
+				Debug.Log("Trigger fin_dialog");
 			}
 		}
 	}
